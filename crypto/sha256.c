@@ -12,4 +12,17 @@
 uint8_t *sha256(int8_t const *s, size_t len,
 		uint8_t digest[SHA256_DIGEST_LENGTH])
 {
+	SHA256_CTX ctx;
+
+	if (!digest)
+	{
+		fprintf(stderr, "sha256: Null digest given\n");
+		return (NULL);
+	}
+
+	SHA256_Init(&ctx);
+	SHA256_Update(&ctx, (const void *)s, (unsigned long)len);
+	SHA256_Final((unsigned char *)digest, &ctx);
+
+	return (digest);
 }
