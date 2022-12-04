@@ -7,7 +7,7 @@
 /**
  * ec_verify - verifies signature
  *
- * @key: pointer to EC_KEY structure 
+ * @key: pointer to EC_KEY structure
  * @msg: pointer
  * @msglen: size
  * @sig: pointer to signature
