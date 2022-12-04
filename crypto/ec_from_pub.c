@@ -9,7 +9,7 @@
 /**
  * bAToEC_POINT - byte array of a public key to EC_POINT
  * @ec_group: pointer
- * @bn_ctx: pointer to structure 
+ * @bn_ctx: pointer to structure
  * @pub: uncompressed representation of the public key/point
  * Return: pointer
  */
