@@ -24,4 +24,8 @@ uint8_t *ec_to_pub(EC_KEY const *key, uint8_t pub[EC_PUB_LEN]);
 uint8_t *bAxEC_POINT(const EC_POINT *ec_point, const EC_GROUP *ec_group,
 			       BN_CTX *bn_ctx, uint8_t pub[EC_PUB_LEN]);
 
+EC_POINT *bAToEC_POINT(const EC_GROUP *ec_group, BN_CTX *bn_ctx,
+			      const uint8_t pub[EC_PUB_LEN]);
+EC_KEY *ec_from_pub(uint8_t const pub[EC_PUB_LEN]);
+
 #endif /* HBLK_CRYPTO_H */
