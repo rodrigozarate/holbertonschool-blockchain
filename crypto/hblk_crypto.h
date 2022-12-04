@@ -36,5 +36,8 @@ FILE *ptnfile_w(char const *folder, const char *filename);
 FILE *fileLD(char const *folder, const char *filename);
 EC_KEY *ec_load(char const *folder);
 
+uint8_t *ec_sign(EC_KEY const *key, uint8_t const *msg, size_t msglen,
+		 sig_t *sig);
+
 
 #endif /* HBLK_CRYPTO_H */
