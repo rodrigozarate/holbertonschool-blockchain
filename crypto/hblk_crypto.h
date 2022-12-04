@@ -11,12 +11,14 @@
 #include <openssl/ec.h>
 /* NID_secp256k1 */
 #include <openssl/obj_mac.h>
+#include <openssl/ecdsa.h>
 
 #define EC_CURVE NID_secp256k1
 #define EC_PUB_LEN 65
 #define PUB_FILENAME "key_pub.pem"
 #define PRI_FILENAME "key.pem"
 #define SIG_MAX_LEN 72
+
 
 /**
  * struct sig_s - store signature of EC_KEY key pair
