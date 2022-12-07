@@ -71,8 +71,7 @@ int fheaderBlk(int fd, const blockchain_t *blockchain)
 	header.hblk_endian = _get_endianness();
 	if (header.hblk_endian == 0)
 	{
-		fprintf(stderr,
-			"fheaderBlk: _get_endianness failure\n");
+		fprintf(stderr, "fheaderBlk: _get_endianness failure\n");
 		return (1);
 	}
 
