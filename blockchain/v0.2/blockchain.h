@@ -139,5 +139,8 @@ int block_is_valid(block_t const *block, block_t const *prev_block);
 int hash_matches_difficulty(uint8_t const hash[SHA256_DIGEST_LENGTH],
                             uint32_t difficulty);
 
+int block_is_valid(block_t const *block, block_t const *prev_block);
+int verifyHashes(block_t const *block, block_t const *prev_block);
+
 
 #endif /* BLOCKCHAIN_H */
