@@ -5,7 +5,8 @@
 #include <stdint.h>
 #include "../../crypto/hblk_crypto.h"
 
-
+#define BLOCK_GENERATION_INTERVAL 1
+#define DIFFICULTY_ADJUSTMENT_INTERVAL 5
 #define BLOCKCHAIN_DATA_MAX 1024
 
 #define HBLK_MAG            "HBLK"
