@@ -144,4 +144,8 @@ int verifyHashes(block_t const *block, block_t const *prev_block);
 
 void block_mine(block_t *block);
 
+uint8_t adjustDifficulty(const blockchain_t *blockchain,
+			const block_t *latest_blk, uint32_t *difficulty);
+uint32_t blockchain_difficulty(blockchain_t const *blockchain);
+
 #endif /* BLOCKCHAIN_H */
