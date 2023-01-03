@@ -1,17 +1,11 @@
-/* block_t */
 #include "blockchain.h"
-/* fprintf */
 #include <stdio.h>
-/* memcmp */
 #include <string.h>
 
 
 /**
- * miniumumBlkTxs - checks a that block in a blockchain has the minimum
- *   requirements for a valid list of transactions
- *
+ * miniumumBlkTxs - checks requirements for a valid list of transactions
  * @block: pointer to the block to check
- *
  * Return: 0 on success, or 1 on failure
  */
 int miniumumBlkTxs(const block_t *block)
@@ -42,13 +36,9 @@ int miniumumBlkTxs(const block_t *block)
 }
 
 /**
- * validateBlockHashes - verifies hashes of a block in a blockchain and its
- *   previous block
- *
+ * validateBlockHashes - verifies hashes of a block in a blockchain
  * @block: pointer to the block to check
- * @prev_block: pointer to the previous block in the blockchain, or NULL if
- *   `block` is the first of the chain
- *
+ * @prev_block: pointer to the previous block in the blockchain
  * Return: 0 on success, or 1 on failure
  */
 int validateBlockHashes(block_t const *block, block_t const *prev_block)
@@ -98,12 +88,9 @@ int validateBlockHashes(block_t const *block, block_t const *prev_block)
 
 /**
  * block_is_valid - verifies validity of a block in a blockchain
- *
  * @block: pointer to the block to check
- * @prev_block: pointer to the previous block in the blockchain, or NULL if
- *   `block` is the first of the chain
+ * @prev_block: pointer to the previous block in the blockchain
  * @all_unspent: list of all unspent outputs in the blockchain
- *
  * Return: 0 on success, or 1 on failure
  */
 int block_is_valid(block_t const *block, block_t const *prev_block,
