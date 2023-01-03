@@ -1,24 +1,17 @@
-/* block_t */
 #include "blockchain.h"
-/* fprintf */
 #include <stdio.h>
-/* sha256 */
 #include "../../crypto/hblk_crypto.h"
-/* memcpy */
 #include <string.h>
 
 
 /**
- * readTxId - used as `action` for llist_for_each to visit each
- *   transaction in a block, and write the transaction IDs to a data buffer
- *
+ * readTxId - visit each transaction in a block
  * @tx: pointer to transaction in block->transactions list, as iterated
  *   through by llist_for_each
  * @idx: index of `tx` in block->transactions list, as iterated through by
  *   llist_for_each
  * @buf_info: pointer to struct containing all parameters necessary to
  *   incrementally access a uint8_t buffer
- *
  * Return: 0 on incremental success (llist_for_each can continue,)
  *   -2 on failure (-1 reserved for llist_for_each errors)
  */
@@ -44,11 +37,9 @@ static int readTxId(transaction_t *tx, unsigned int idx, buf_info_t *buf_info)
 
 /**
  * block_hash - computes the hash of a block
- *
  * @block: pointer to the block to be hashed
  * @hash_buf: pointer to buffer for storing hash value
- *
- * Return: pointer to hash_buf, or NULL on failure
+ * Return: pointer
  */
 uint8_t *block_hash(block_t const *block,
 		    uint8_t hash_buf[SHA256_DIGEST_LENGTH])
@@ -58,16 +49,13 @@ uint8_t *block_hash(block_t const *block,
 
 	if (!block || !hash_buf)
 	{
-		fprintf(stderr, "block_hash: NULL parameter(s)\n");
 		return (NULL);
 	}
-	/* Genesis block */
 	if (block->info.index == 0 && !block->transactions)
 	{
 		memcpy(hash_buf, GEN_BLK_HSH, SHA256_DIGEST_LENGTH);
 		return (hash_buf);
 	}
-	/* hashed data: block info, len bytes of buffer, tx hashes in series */
 	buf_info.sz += sizeof(block_info_t);
 	buf_info.sz += block->data.len;
 	tx_ct = llist_size(block->transactions);
@@ -76,7 +64,6 @@ uint8_t *block_hash(block_t const *block,
 	buf_info.buf = malloc(sizeof(uint8_t) * buf_info.sz);
 	if (!buf_info.buf)
 	{
-		fprintf(stderr, "block_hash: malloc failure\n");
 		return (NULL);
 	}
 	memcpy(buf_info.buf, block, sizeof(block_info_t) + block->data.len);
