@@ -5,7 +5,7 @@
 
 
 /**
- * matchUnspentOut - llist_find_node to compare block transaction and output hashes
+ * matchUnspentOut - compare block transaction and output hashes
  * @unspent_tx_out: unspent output in a blockchain->unspent list, as
  *   iterated through by llist_find_node
  * @tx_in: pointer to input containing references to match
