@@ -4,14 +4,14 @@
 OpenSSL packages
 
 If not installed please use:
-''' sudo apt-get install libssl1.0.0 '''
+``` sudo apt-get install libssl1.0.0 ```
 and
-''' sudo apt-get install libssl-dev '''
+``` sudo apt-get install libssl-dev ```
 
 ## Use
 from inside the cli folder
 
-Launch ''' ./hblk_cli '''
+Launch ``` ./hblk_cli ```
 
 Default path hblk_save/wallet
 
