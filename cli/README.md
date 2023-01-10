@@ -1,9 +1,14 @@
 # `hblk_cli` - Holberton blockchain command line interpreter
 
 ## Use
+from inside the cli folder
+
+Launch ''' ./hblk_cli '''
+
+Default path hblk_save/wallet
 
 ### Flags
-In either mode, flags can be passed to the CLI as arguments to determine behavior at startup:
+In either mode interactive or pipping, flags can be passed to the CLI as arguments to determine behavior at startup:
 | flag  | name | effect |
 | ----- | ---- | ------ |
 | `-w` | wallet | CLI attempts to load a wallet (EC key pair) from the directory path following this flag, or the default if none is provided (see [`wallet_load`](#wallet_load-path).) |
