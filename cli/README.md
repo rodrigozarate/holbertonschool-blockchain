@@ -1,5 +1,13 @@
 # `hblk_cli` - Holberton blockchain command line interpreter
 
+### Prerequisites
+OpenSSL packages
+
+If not installed please use:
+''' sudo apt-get install libssl1.0.0 '''
+and
+''' sudo apt-get install libssl-dev '''
+
 ## Use
 from inside the cli folder
 
